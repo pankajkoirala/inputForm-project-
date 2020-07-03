@@ -13,8 +13,7 @@ const FormComponent = (props) => (
         picture:"",
       }}
       onSubmit={(values, action) => {
-        props.save([values]);
-        console.log(values);
+        props.save(values);        
       }}
       validationSchema={FormData}
     >
@@ -62,10 +61,10 @@ const FormComponent = (props) => (
               onChange={handleChange}
               onBlur={handleBlur}
             >
-              <option>please enter</option>
-              <option>Common</option>
-              <option>Rare</option>
-              <option>Very Rare</option>
+              <option value="">please enter</option>
+              <option value="common">Common</option>
+              <option value="rare">Rare</option>
+              <option value="extremely rare">Very Rare</option>
             </Input>
             {touched.rarity && errors.rarity && (
               <span
@@ -114,8 +113,7 @@ const FormComponent = (props) => (
                 height="20"
               />
             )}
-          </div>
-
+          </div>          
           <button
             type="submit"
             name="submit"

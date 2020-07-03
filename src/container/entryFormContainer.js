@@ -10,8 +10,10 @@ const EntryFormContainer = () => {
      formData.append("rarity",data.rarity)
      formData.append("notes",data.notes)
      formData.append("picture",data.picture)
+     console.log(data.picture);
+     
     axios
-      .post("http://localhost:5000/api/observation", data,{headers: {
+      .post("http://localhost:5000/api/observation", formData,{headers: {
         'Access-Control-Allow-Origin': '*',
       }}
     )

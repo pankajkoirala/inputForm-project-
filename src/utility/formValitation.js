@@ -6,7 +6,7 @@ import * as Yup from "yup";
     .max(50, "Too Long!")
     .required("Required"),
   rarity: Yup.string()
-    .oneOf(["Common", "Rare", "Very Rare"])
+    .oneOf(["common", "rare", "extremely rare"])
     .required("Required"),
   notes: Yup.string().required("Required"),
 
