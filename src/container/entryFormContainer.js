@@ -18,7 +18,8 @@ const EntryFormContainer = () => {
       }}
     )
       .then((arg) => {
-        console.log("save successfylly", arg);
+        console.log("save successfylly");
+        window.location.href = "http://localhost:3000"
       })
       .catch((err) => {
         console.log("unsuccessful", err);
