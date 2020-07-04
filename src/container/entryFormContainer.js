@@ -17,12 +17,12 @@ const EntryFormContainer = () => {
     formData.append("picture", data.picture);
     console.log(data.picture);
 
-    let p = await axios.post(BASE_URL + "/api/observation", formData, {
+    let sendData = await axios.post(BASE_URL + "/api/observation", formData, {
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
     });
-    if (p) {
+    if (sendData) {
       return "save successfully";
     } else {
       return "err";

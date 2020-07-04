@@ -13,7 +13,9 @@ const FormComponent = (props) => (
         picture:"",
       }}
       onSubmit={(values, action) => {
-        props.save(values);        
+        props.save(values); 
+        console.log(values);
+               
       }}
       validationSchema={FormData}
     >
