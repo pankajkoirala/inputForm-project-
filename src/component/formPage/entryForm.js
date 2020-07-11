@@ -1,21 +1,20 @@
 import React from "react";
 import { Formik } from "formik";
 import { Label, Input } from "reactstrap";
-import { FormData } from "../utility/formValitation";
+import { FormData } from "../../utility/formValitation";
 
 const FormComponent = (props) => (
-  <div className="container  row d-flex justify-content-center">
+  <div className="container  row d-flex justify-content-center ">
     <Formik
       initialValues={{
         species: "",
         rarity: "",
         notes: "",
-        picture:"",
+        picture: "",
       }}
       onSubmit={(values, action) => {
-        props.save(values); 
+        props.save(values);
         console.log(values);
-               
       }}
       validationSchema={FormData}
     >
@@ -115,7 +114,7 @@ const FormComponent = (props) => (
                 height="20"
               />
             )}
-          </div>          
+          </div>
           <button
             type="submit"
             name="submit"
@@ -124,7 +123,7 @@ const FormComponent = (props) => (
           >
             Save
           </button>
-          <button className="btn-danger btn-lg"  onClick={handleReset}>
+          <button className="btn-danger btn-lg" onClick={handleReset}>
             Cancle
           </button>
         </form>

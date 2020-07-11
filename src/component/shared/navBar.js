@@ -7,11 +7,6 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   NavbarText,
 } from "reactstrap";
 
@@ -23,12 +18,12 @@ const NavBar = (props) => {
   return (
     <div className="bg-secondary">
       <Navbar  light expand="md">
-        <NavbarBrand><Link to="/">HOME</Link></NavbarBrand>
+        <Link to="/picture"> HOME </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink><Link to="/form">FORM</Link></NavLink>
+             <Link to="/form"> FORM </Link>
             </NavItem>
           </Nav>
           <NavbarText className="h1 text-white">PHOTO ALBUM</NavbarText>

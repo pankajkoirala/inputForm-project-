@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { Switch, Route } from "react-router-dom";
 import axios from "axios";
-import { BASE_URL } from "../const/appConfig";
-import AlbumPhoto from "../component/photoLIbrary";
+import { BASE_URL } from "../../const/appConfig";
+import AlbumPhoto from "../../component/homePage/photoLIbrary";
+import DetailPage from "../detailPageContainer/detailPageContainet"
+import Det from "../../component/detailPage/Detail";
 
-const PhotoLibraryContainer = () => {
+
+const PhotoLibraryContainer = (props) => {
+ let {match}=props
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -18,13 +24,14 @@ const PhotoLibraryContainer = () => {
     });
     setData(serverdata.data);
     console.log(serverdata.data);
-    
   };
 
   return (
     <div>
-      <AlbumPhoto serverData={data} />
+      <AlbumPhoto serverData={data} {...props} />      
+        <Route exact path={"/picture/:id"} component={Det}></Route>       
     </div>
   );
 };
+
 export default PhotoLibraryContainer;

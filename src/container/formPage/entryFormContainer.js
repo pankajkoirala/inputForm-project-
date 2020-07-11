@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
-import { BASE_URL } from "../const/appConfig";
+import { BASE_URL } from "../../const/appConfig";
 
 
-import EntryForm from "../component/entryForm";
+import EntryForm from "../../component/formPage/entryForm";
 
 const EntryFormContainer = () => {
  

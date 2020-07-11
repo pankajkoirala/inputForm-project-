@@ -1,5 +1,7 @@
 import React from "react";
-import "../component/photolibrary.css";
+import{Link} from "react-router-dom"
+
+import "./photolibrary.css";
 import {
   Card,
   CardImg,
@@ -11,8 +13,10 @@ import {
 } from "reactstrap";
 
 const AlbumPhoto = (props) => {
+  let {match}=props
+
   let albumData = props.serverData;
-  console.log(albumData);
+  console.log(props.match);
 
   return (
     <div className="row">
@@ -28,12 +32,12 @@ const AlbumPhoto = (props) => {
               />
               <CardBody>
                 <CardTitle>{arg.species}</CardTitle>
-        <CardSubtitle>{arg.rarity}</CardSubtitle>
-                <CardText>
-                  {arg.notes}
-                </CardText>
-                <Button href={arg.picture} type="button">photo preview</Button>
-              </CardBody>
+                <CardSubtitle>{arg.rarity}</CardSubtitle>
+                <CardText>{arg.notes}</CardText>
+                <Link to ={"/picture/"+arg._id}><Button type="button">
+                  photo preview
+                </Button></Link>
+              </CardBody>     
             </Card>
           </div>
         );
